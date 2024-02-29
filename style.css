@@ -1,0 +1,37 @@
+:root {
+  font-family: 'Courier New', Courier, monospace;
+  color-scheme: light dark;
+}
+
+.container {
+  padding: 2rem;
+}
+
+[data-id="clear-canvas-button"] {
+  background-color: #008b8b;
+  color: white;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: 0.1s ease-out;
+}
+
+[data-id="clear-canvas-button"]:hover {
+  background-color: #02acac;
+}
+
+[data-id="drawing-canvas"] {
+  --border-color: #000;
+  max-width: 100%;
+  border: 2px dashed var(--border-color);
+  border-radius: 5px;
+  cursor: crosshair;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-id="drawing-canvas"] {
+    --border-color: #fff;
+  }
+}
