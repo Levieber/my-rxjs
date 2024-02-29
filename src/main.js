@@ -7,19 +7,6 @@ import {
 	takeUntil,
 } from "./operators.js";
 
-const store = {
-	database: [],
-	get() {
-		return this.database;
-	},
-	set(item) {
-		this.database.unshift(item);
-	},
-	clear(item) {
-		this.database.length = 0;
-	},
-};
-
 const events = {
 	mousedown: "mousedown",
 	mouseup: "mouseup",
@@ -100,7 +87,6 @@ function initDrawingCanvas(canvas, context, events) {
 						context.moveTo(previousPositions.x, previousPositions.y);
 						context.lineTo(currentPositions.x, currentPositions.y);
 						context.stroke();
-						store.set({ from: previousPositions, to: currentPositions });
 					}
 				},
 			}),
